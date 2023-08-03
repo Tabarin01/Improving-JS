@@ -2,8 +2,8 @@
      Exercise 1 get the date and the time  *
 ********************************************/
 
-function getCurrentDay() {   
-  const daysOfWeek = [  
+function getCurrentDay() {
+  const daysOfWeek = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -13,15 +13,15 @@ function getCurrentDay() {
     "Saturday",
   ]; // array di stringhe contenenti i giorni della settimana
   const date = new Date(); // oggetto Date di JS
-  const dayIndex = date.getDay(); 
-  return daysOfWeek[dayIndex];  // restituisce il giorno della settimana come stringa
+  const dayIndex = date.getDay();
+  return daysOfWeek[dayIndex]; // restituisce il giorno della settimana come stringa
 }
 
-function getCurrentTime() { 
-  const date = new Date();  // istanza del tempo corrente
+function getCurrentTime() {
+  const date = new Date(); // istanza del tempo corrente
   let hours = date.getHours(); // memorrizza in hours le ore correnti
-  const ampm = hours >= 12 ? "PM" : "AM";  //ternary operator le ore sono >= 12 ? se si "PM" se no "AM"
-  hours = hours % 12 || 12;  // Operzione che restituisce le ore nel formato a 12 e non 24
+  const ampm = hours >= 12 ? "PM" : "AM"; //ternary operator le ore sono >= 12 ? se si "PM" se no "AM"
+  hours = hours % 12 || 12; // Operzione che restituisce le ore nel formato a 12 e non 24
   const minutes = String(date.getMinutes()).padStart(2, "0"); //ottiene i minuti e li converte in stringa assicurando sempre 2 cifre
   const seconds = String(date.getSeconds()).padStart(2, "0"); //stessa cosa con i secondi
   return `${hours} ${ampm} : ${minutes} : ${seconds}`;
@@ -56,19 +56,19 @@ Exercise 3 get the date in various format  *
 ********************************************/
 
 function getCurrentDateFormatted() {
-  const currentDate = new Date();
-  const month = String(currentDate.getMonth() + 1).padStart(2, "0");
-  const day = String(currentDate.getDate()).padStart(2, "0");
+  const currentDate = new Date(); // crea un oggetto Date
+  const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // ottiene il mese e lo converte in stringa assicurandosi che ci siano sempre due cifre
+  const day = String(currentDate.getDate()).padStart(2, "0"); //stessa cosa qui
   const year = currentDate.getFullYear();
   return `${month}-${day}-${year}`;
 }
 
-function getAlternateDateFormats() {
+function getAlternateDateFormats() { // funzione per generare la data in diversi formati
   let currentFormat = 0;
-  const formats = ["mm-dd-yyyy", "dd-mm-yyyy", "yyyy/mm/dd"];
-  const dateDisplayElement = document.getElementById("dateDisplay");
+  const formats = ["mm-dd-yyyy", "dd-mm-yyyy", "yyyy/mm/dd"]; // array dei vari formati
+  const dateDisplayElement = document.getElementById("dateDisplay"); // prende l'elemento HTML
 
-  function updateDateDisplay(formattedDate) {
+  function updateDateDisplay(formattedDate) { 
     dateDisplayElement.textContent = formattedDate;
   }
 
@@ -106,13 +106,15 @@ Exercise 4 get triangle Area               *
 ********************************************/
 
 function calculateArea(event) {
-  event.preventDefault();
+  event.preventDefault(); // previene che il form venga inviato e la pagina aggiornata
 
-  const sideA = parseFloat(document.getElementById("sideA").value);
+
+  //Dichiarazione e assegnazione dei lati del triangolo
+  const sideA = parseFloat(document.getElementById("sideA").value); // ne prende il valore
   const sideB = parseFloat(document.getElementById("sideB").value);
   const sideC = parseFloat(document.getElementById("sideC").value);
 
-  if (
+  if ( // controllo per verificare che i numeri inseriti siano tutti validi
     isNaN(sideA) ||
     isNaN(sideB) ||
     isNaN(sideC) ||
@@ -125,38 +127,40 @@ function calculateArea(event) {
     return;
   }
 
-  const s = (sideA + sideB + sideC) / 2;
+  const s = (sideA + sideB + sideC) / 2; // calcolo del semiperimetro
   const area = Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC)).toFixed(
     2
-  );
+  ); //calcolo dell'area
 
   document.getElementById(
     "result"
-  ).textContent = `The area of the triangle is: ${area}`;
+  ).textContent = `The area of the triangle is: ${area}`; //viene mandato in output il risultato nell'elemnto HTML result
 }
 
 /******************************************* 
 Exercise 5 animated string                 *
 ********************************************/
 
-let intervalId;
-let rotating = false;
+let intervalId;  //
+let rotating = false; // variabile per tenere traccia dello stato di animazione
 let originalString = "w3resource";
 
-function rotateString() {
+function rotateString() {  // questa funzione regola l'animazione (sarebbe lo spostamento della stringa)
   const rotatedString =
     originalString.charAt(originalString.length - 1) +
-    originalString.slice(0, -1);
-  document.getElementById("rotatedString").innerText = rotatedString;
+    originalString.slice(0, -1); // i caratteri della stringa vengono spostati di uno quindi l'ultimo ovvero lenght-1 va al primo posto 
+ //slice per ottenere tutti i caratteri, tranne l'ultimo. Questo restituirà "w3resourc"
+ 
+    document.getElementById("rotatedString").innerText = rotatedString;
   originalString = rotatedString;
 }
 
-function toggleRotation() {
-  if (!rotating) {
-    rotating = true;
-    intervalId = setInterval(rotateString, 200); // Adjust the interval (in milliseconds) for speed
+function toggleRotation() { // gestisce il pulsante per avviare e fermare l'animazione
+  if (!rotating) {  // se è false l'animazione non è ancora iniziata 
+    rotating = true; //viene impostata su true
+    intervalId = setInterval(rotateString, 200); 
     document.getElementById("rotateButton").innerText = "Stop Rotation";
-  } else {
+  } else { // se è true
     clearInterval(intervalId);
     if (originalString === "w3resource") {
       alert("NICE");
