@@ -18,7 +18,9 @@ main {
   border-radius: 5px;
   max-width: 100%;
   width: 80%;
-  min-height: 300px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -147,3 +149,67 @@ input[type="submit"]:hover {
 .ex5 button:hover{
     background-color: #c53100;
 }
+
+#resultXmas{
+  font-size:19px;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #000000;
+}
+
+/* CSS for the Multiplication and Division Calculator */
+.mD {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.mD h1 {
+  color: #333;
+  text-align: center;
+}
+
+.mD label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.mD input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.mD button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.mD button:hover {
+  background-color: #45a049;
+}
+
+.mD #resultCalc {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+
