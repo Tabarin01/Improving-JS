@@ -1,0 +1,149 @@
+/* style.css */
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  background-color: #ffffffc5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.805);
+  padding: 30px;
+  border-radius: 5px;
+  max-width: 100%;
+  width: 80%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p,
+pre {
+  font-family: Arial, sans-serif;
+  color: #666;
+  font-size: 16px;
+}
+
+#day {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0352a5;
+}
+
+#time {
+  font-size: 20px;
+  color: #d37000;
+}
+
+#ex2 {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#ex2:hover {
+  background-color: #0056b3;
+}
+
+#dateDisplay {
+  text-align: center;
+  font-size: 28px;
+  color: #be0000;
+  margin: 20px auto;
+  border: 2px solid #000000;
+  padding: 10px 20px;
+  max-width: 300px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile per il form */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.628);
+}
+
+/* Stile per le label */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Stile per gli input */
+input[type="number"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Stile per il pulsante di submit */
+input[type="submit"] {
+  margin-top: 10px;
+  background-color: #000000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #c53100;
+}
+
+/* Stile per il paragrafo dei risultati */
+#result {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.ex5 {
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ex5 p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.ex5 button {
+  background-color: #000000;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.ex5 button:hover{
+    background-color: #c53100;
+}
