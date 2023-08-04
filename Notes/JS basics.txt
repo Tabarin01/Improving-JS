@@ -1,0 +1,164 @@
+
+Cos'è JavaScript?
+
+JavaScript è un linguaggio di programmazione interpretato, orientato
+agli oggetti e basato su eventi.
+Viene eseguito all'interno del browser e può essere utilizzato
+per manipolare il contenuto delle  pagine web, interagire con l'utente
+e gestire dati lato client.
+
+JS viene eseguito ovviamente all'interno del browser web, possono
+essere scritti all'interno del codice HTML con il tag <script>
+oppure essere collegati dall'esterno dell'html creando un file .js 
+e poi inserendo il src="file.js" nel tag <script>
+
+
+Il risultato di un calcolo o di un messaggio sulla pagina web,
+può essere visualizzato attraverso la console. (F12-console)
+La quale ci dirà anche la presenza di eventuali errori
+
+Nel codice si utilizza:
+
+console.log("Messaggio JS!")
+-------------------------------------------------------------------------
+Variabili e assegnazione
+
+Differenze di scope: 
+-global - si riferisce a tutta l'area del codice;
+-local - si indica una porzione di codice;
+
+Dentro gli scope locali abbiamo altri due scope: 
+-functional - è la porzione di codice delimitata da una funzione;
+-block - è la porzione di codice delimitata dalle parentesi graffe
+quindi non solo le funzioni, ma anche if, cicli eccetera. 
+
+Gli scope sono uno dei principali aspetti che differenziano var, let, const.
+
+
+Fino al 2015 veniva utilizzata solo var 
+
+Dal'introduzione di JS(ES6) sono state aggiunte let e const
+
+In js le variabili sono strutture fondamentali utilizzate per
+memorizzare e manipolare dati, possono contenere valori di diversi
+tipi di dati come numeri, stringhe, booleani, oggetti, liste eccetera.
+
+'let': permette di dichiarare variabili con uno scope limitato 
+al blocco in cui sono definite;
+
+'const': consente di dichiarare variabili con un valore costante
+che non può essere riassegnato. Le variabili hanno anch'esse uno scope
+di blocco come quelle dichiarate con 'let'.
+
+
+Caratteristiche delle variabili: 
+
+1-Scope: lo scope, l'ambito, definisce la visibilità di una variabile 
+all'interno del codice. Le variabile dichiarate con 'var' hanno uno 
+scope di funzione o, se dichiarate al di fuori di qualsiasi funzione, 
+hanno uno scope globale.  Mentre 'let' e 'const' hanno uno scope di blocco.
+
+2-Hoisting: le variabili dichiarate con 'var' sono soggette a hoisting.
+Questo significa che le le dichiarazioni vengono spostate nella parte 
+superiore dello scope in cui sono definite, prima dell'esecuzione del
+codice.
+Anche 'let' e 'const' hanno hoisting, ma vengono inizializzate solo 
+quando il flusso di esecuzione raggiunge il punto in cui sono definite.
+
+Esempio per spiegare:
+console.log(name); // Output: undefined
+var name = "Mario";
+console.log(name); // Output: "Mario"
+
+
+3-Riassegnazione:
+'let' permette la riassegnazione con un nuovo valore, mentre 'const'
+non può essere riassegnata dopo la loro inizializzazione.
+
+4-Inizializzazione: 'var' e 'let' sono inizializzate con il valore 
+'undefined' finché non viene loro assegnato un valore. Con 'const' invece
+bisogna per forza inizializzarle al momento della dichiarazione
+
+
+MIGLIOR CASO DI UTILIZZO: 
+
+___'var': se si lavora ad un progetto che non utilizza ancora ES6 o se si 
+hanno esigenze di retrocompatibilità con browser più vecchi. 
+Per i nuovi progetti è consigliato evitare 'var' a favore delle altre due.
+
+___'let': si utilizza quando si vuole dichiarare una variabile il cui 
+valore cambierà nel corso del tempo o quando vuoi limitare lo scope 
+della variabile a un blocco di codice specifico.
+
+___'const': si utilizza per dichiarare costanti che non cambieranno 
+nel corso del tempo.
+
+In generale è buona pratica utilizzare 'let' per variabili mutevoli, e const
+quando il valore dovrebbe rimanere costante.
+
+-------------------------------------------------------------------------
+
+TIPI DI DATI
+
+A differenza di Java in JS non serve, essendo un linguaggio interpretato come python
+ad associare il tipo di dato alla variabile: 
+
+var n = 42;   // sarà letto da JS come integer 
+var text = "Questa viene letta come stringa";
+var boolean = true; 
+var array = [1,2,3,4];
+var oggetto = {nome:"Mario", cognome:"Rossi"};
+
+------------------------------------------------------------------------
+
+OPERATORI
+
+JS supporta operatori matematici, relazionali e logici. 
+
+
+------------------------------------------------------------------------
+
+CONDIZIONI E CICLI 
+
+Le istruzioni condizionali, come 'if' 'else if' , 'else' e i cicli come
+'for', 'while', 
+
+------------------------------------------------------------------------
+
+FUNZIONI 
+Le funzioni sono blocchi di codici che puoi definire una sola volta
+e richiamare in diverse parti del tuo programma. 
+
+------------------------------------------------------------------------
+
+EVENTI 
+
+JavaScript può interagire con l'utente attraverso eventi come il clic di
+un pulsante, il caricamento di una pagina o l'onserimento di dati in un
+modulo. Possiamo gestire questi eventi per eseguire azioni specifiche.
+
+
+
+
+------------------------------------------------------------------------
+
+ARRAY e Ciclo FOR 
+
+Gli array sono collezioni ordinate di elementi che possono contenere valori di diversi tipi di dati
+Per acceder agli elementi di un array, usiamo gli indici che partono da 0. 
+
+var numeri = [1, 2, 3, 4, 5];
+
+for (var i = 0; i < numeri.length; i++) {
+  console.log(numeri[i]);
+}
+
+Questo ciclo stampa ciascun elemento dell'array "numeri" nella console.
+
+--------------------------------------------------------------------------
+
+FUNZIONI 
+
+
+
+
