@@ -1,0 +1,13 @@
+FUNZIONI ARROW
+
+Le funzioni arrow sono una forma più concisa di definizione delle funzioni in JavaScript. 
+Sono particolarmente utili quando vuoi scrivere funzioni anonime o funzioni callback.
+
+// Funzione tradizionale
+function somma(a, b) {
+  return a + b;
+}
+
+// Funzione arrow
+const sommaArrow = (a, b) => a + b;
+
