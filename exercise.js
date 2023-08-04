@@ -63,12 +63,13 @@ function getCurrentDateFormatted() {
   return `${month}-${day}-${year}`;
 }
 
-function getAlternateDateFormats() { // funzione per generare la data in diversi formati
+function getAlternateDateFormats() {
+  // funzione per generare la data in diversi formati
   let currentFormat = 0;
   const formats = ["mm-dd-yyyy", "dd-mm-yyyy", "yyyy/mm/dd"]; // array dei vari formati
   const dateDisplayElement = document.getElementById("dateDisplay"); // prende l'elemento HTML
 
-  function updateDateDisplay(formattedDate) { 
+  function updateDateDisplay(formattedDate) {
     dateDisplayElement.textContent = formattedDate;
   }
 
@@ -108,13 +109,13 @@ Exercise 4 get triangle Area               *
 function calculateArea(event) {
   event.preventDefault(); // previene che il form venga inviato e la pagina aggiornata
 
-
   //Dichiarazione e assegnazione dei lati del triangolo
   const sideA = parseFloat(document.getElementById("sideA").value); // ne prende il valore
   const sideB = parseFloat(document.getElementById("sideB").value);
   const sideC = parseFloat(document.getElementById("sideC").value);
 
-  if ( // controllo per verificare che i numeri inseriti siano tutti validi
+  if (
+    // controllo per verificare che i numeri inseriti siano tutti validi
     isNaN(sideA) ||
     isNaN(sideB) ||
     isNaN(sideC) ||
@@ -141,26 +142,30 @@ function calculateArea(event) {
 Exercise 5 animated string                 *
 ********************************************/
 
-let intervalId;  //
+let intervalId; //
 let rotating = false; // variabile per tenere traccia dello stato di animazione
 let originalString = "w3resource";
 
-function rotateString() {  // questa funzione regola l'animazione (sarebbe lo spostamento della stringa)
+function rotateString() {
+  // questa funzione regola l'animazione (sarebbe lo spostamento della stringa)
   const rotatedString =
     originalString.charAt(originalString.length - 1) +
-    originalString.slice(0, -1); // i caratteri della stringa vengono spostati di uno quindi l'ultimo ovvero lenght-1 va al primo posto 
- //slice per ottenere tutti i caratteri, tranne l'ultimo. Questo restituirà "w3resourc"
- 
-    document.getElementById("rotatedString").innerText = rotatedString;
+    originalString.slice(0, -1); // i caratteri della stringa vengono spostati di uno quindi l'ultimo ovvero lenght-1 va al primo posto
+  //slice per ottenere tutti i caratteri, tranne l'ultimo. Questo restituirà "w3resourc"
+
+  document.getElementById("rotatedString").innerText = rotatedString;
   originalString = rotatedString;
 }
 
-function toggleRotation() { // gestisce il pulsante per avviare e fermare l'animazione
-  if (!rotating) {  // se è false l'animazione non è ancora iniziata 
+function toggleRotation() {
+  // gestisce il pulsante per avviare e fermare l'animazione
+  if (!rotating) {
+    // se è false l'animazione non è ancora iniziata
     rotating = true; //viene impostata su true
-    intervalId = setInterval(rotateString, 200); 
+    intervalId = setInterval(rotateString, 200);
     document.getElementById("rotateButton").innerText = "Stop Rotation";
-  } else { // se è true
+  } else {
+    // se è true
     clearInterval(intervalId);
     if (originalString === "w3resource") {
       alert("NICE");
