@@ -125,12 +125,6 @@ Le istruzioni condizionali, come 'if' 'else if' , 'else' e i cicli come
 
 ------------------------------------------------------------------------
 
-FUNZIONI 
-Le funzioni sono blocchi di codici che puoi definire una sola volta
-e richiamare in diverse parti del tuo programma. 
-
-------------------------------------------------------------------------
-
 EVENTI 
 
 JavaScript può interagire con l'utente attraverso eventi come il clic di
@@ -157,8 +151,66 @@ Questo ciclo stampa ciascun elemento dell'array "numeri" nella console.
 
 --------------------------------------------------------------------------
 
-FUNZIONI 
+FUNZIONI, chiamate anche METODI
+
+Le funzioni sono blocchi di codici che puoi definire una sola volta
+e richiamare in diverse parti del tuo programma. 
+
+Una funzione può utilizzare variabili globali dichiarate all'inizio del codice e chiamare 
+altre funzioni. 
+
+di base si scrive così
+
+function nomeQualsiasi(){}
+
+dentro le parentesi tonde si può passare una "richiesta". Nel senso che quella funzione 
+una volta chiamata avrà bisogno dentro quelle parentesi che quella richiesta venga soddisfatta
+
+in breve questa è la funzione: 
+
+function nomeQualsiasi(nome){
+ return nome.toUpperCase();
+}
+
+quando la richiamo:
+
+let nome = "Mario";
+
+let result = nomeQualsiasi(nome);
+console.log(result);   //Output "MARIO"
 
 
+----------------------------------------------------------------------------------------
+
+OGGETTI
+
+Gli oggetti sono collezioni di coppie chiave-valore e sono molto utili per 
+rappresentare entità del mondo reale.
+
+var persona = {
+  nome: "Mario",
+  cognome: "Rossi",
+  eta: 30,
+  professione: "Ingegnere"
+};
+
+console.log(persona.nome); // Stampa "Mario"
+console.log(persona.eta); // Stampa 30
+---------------------------------------------------------------------------------------------
+EVENTI 
+
+JavaScript consente di interagire con l'utente attraverso eventi. 
+Gli eventi possono essere associati a elementi HTML e gestiti tramite funzioni JavaScript.
 
 
+Parte HTML:
+
+<button id="myButton">Clicca qui</button>
+
+Parte JS:
+
+document.getElementById("myButton").addEventListener("click", function() {
+  console.log("Hai cliccato il pulsante!");
+});
+
+--------------------------------------------------------------------------------------

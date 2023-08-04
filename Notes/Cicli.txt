@@ -1,0 +1,125 @@
+CICLI e CONDIZIONI 
+
+Condizioni 'if' 'else'
+
+Le istruzioni condizionali ci permettono di prendere decisioni nel nostro codice. 
+Con l'istruzione if, possiamo eseguire un blocco di codice solo se 
+una certa condizione è vera. Se la condizione è falsa, 
+possiamo fornire un percorso alternativo utilizzando l'istruzione else. 
+Inoltre, possiamo controllare più condizioni con else if.
+
+var numero = 10;
+
+if (numero > 0) {
+  console.log("Il numero è positivo");
+} else if (numero < 0) {
+  console.log("Il numero è negativo");
+} else {
+  console.log("Il numero è zero");
+}
+
+------------------------------------------------------------------------------------------
+
+CICLI 'while' e 'do-while'
+
+I cicli ci consentono di eseguire ripetutamente un blocco di codice finché una certa 
+condizione è vera. In JavaScript, abbiamo il ciclo while e il ciclo do-while. 
+Il ciclo while esegue il blocco di codice solo se la condizione è vera all'inizio, 
+mentre il ciclo do-while esegue il blocco almeno una volta, quindi valuta la condizione. 
+
+
+// Ciclo While
+var count = 1;
+while (count <= 5) {
+  console.log("Iterazione #" + count);
+  count++;
+}
+
+// Ciclo Do-While
+var i = 1;
+do {
+  console.log("Numero: " + i);
+  i++;
+} while (i <= 5);
+
+-------------------------------------------------------------------------------------------
+
+Ciclo 'for' in e 'for' of
+
+Il ciclo for-in è utilizzato per iterare attraverso le proprietà di un oggetto, 
+mentre il ciclo for-of è utilizzato per iterare attraverso gli elementi di un array 
+o altre strutture dati iterabili come stringhe, set, map. 
+
+// Ciclo For-In
+var persona = {
+  nome: "Mario",
+  cognome: "Rossi",
+  eta: 30
+};
+
+Quindi per tutti gli elementi prop presenti nell'oggetto persona stampera gli elementi fino 
+ad esaurirsi
+
+for (var prop in persona) {
+  console.log(prop + ": " + persona[prop]);
+}
+
+
+// Ciclo For-Of
+var numeri = [1, 2, 3, 4, 5];
+for (var numero of numeri) {
+  console.log(numero);
+}
+
+
+A differenza del ciclo for...in, il ciclo for...of non consente di accedere 
+alle chiavi o agli indici, ma fornisce direttamente i valori degli elementi.
+
+----------------------------------------------------------------------------------------------
+
+GESTIONE DEGLI ERRORI 
+
+La struttura try-catch ci permette di gestire gli errori nel nostro codice senza farlo 
+bloccare. 
+Mettiamo il blocco di codice sospetto dentro il blocco try, e se si verifica un errore,
+viene catturato dal blocco catch, evitando che l'applicazione si interrompa.
+
+try {
+  // Blocco di codice sospetto che potrebbe generare un errore
+  var risultato = 10 / 0; // Questo genererà un errore di divisione per zero
+} catch (errore) {
+  // Blocco di codice per gestire l'errore
+  console.log("Si è verificato un errore: " + errore.message);
+}
+
+--------------------------------------------------------------------------------------------
+
+JSON (JavaScript Object Notation)
+
+JSON è un formato di scambio dati molto comune. In JavaScript, possiamo rappresentare 
+oggetti e array utilizzando la notazione JSON. 
+Per convertire un oggetto o un array in JSON, possiamo utilizzare JSON.stringify(), 
+e per convertire una stringa JSON in un oggetto o un array, possiamo utilizzare JSON.parse().
+
+
+var persona = {
+  nome: "Mario",
+  cognome: "Rossi",
+  eta: 30
+};
+
+var jsonString = JSON.stringify(persona);
+console.log(jsonString);
+
+var oggettoDaJSON = JSON.parse(jsonString);
+console.log(oggettoDaJSON);
+
+I file json sono importanti per:
+
+-Comunicazione tra frontend e backend;
+-Archiviazione dei dati;
+-Configurazioni;
+-Serializzazione e deserializzazione di oggetti;
+-Condivisione di dati tra servizi;
+-Scambio dati con API di terze parti;
+-Configurazione dei test di unità;
